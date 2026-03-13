@@ -18,7 +18,7 @@
   --max:1200px;
 }
 html{scroll-behavior:smooth;overflow-x:hidden;}
-body{font-family:'Source Sans Pro',system-ui,-apple-system,sans-serif;color:var(--text);background:var(--white);-webkit-font-smoothing:antialiased;line-height:1.7;overflow-x:hidden;}
+body{font-family:'Source Sans Pro',system-ui,-apple-system,sans-serif;color:var(--text);background:var(--white);-webkit-font-smoothing:antialiased;font-size:16px;line-height:1.7;overflow-x:hidden;}
 a,button,input,select,textarea{touch-action:manipulation;}
 a{color:var(--amber);text-decoration:none;}
 a:hover{text-decoration:underline;}
@@ -49,15 +49,15 @@ h1,h2,h3,h4{font-family:'Playfair Display',Georgia,serif;line-height:1.2;letter-
 .hamburger svg{display:block;}
 
 /* ── HERO ── */
-.hero{background:var(--primary);background-image:radial-gradient(circle at 20% 50%,rgba(245,158,11,.06) 0%,transparent 50%),radial-gradient(circle at 80% 50%,rgba(245,158,11,.04) 0%,transparent 50%);color:#fff;padding:80px 20px;text-align:center;}
-.hero h1{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.8rem,5vw,2.8rem);font-weight:800;margin-bottom:16px;letter-spacing:-0.5px;color:#fff;}
+.hero{background:var(--primary);background-image:radial-gradient(circle at 20% 50%,rgba(245,158,11,.07) 0%,transparent 50%),radial-gradient(circle at 80% 50%,rgba(245,158,11,.05) 0%,transparent 50%);color:#fff;padding:100px 20px;text-align:center;min-height:500px;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+.hero h1{font-family:'Playfair Display',Georgia,serif;font-size:clamp(2.2rem,5.5vw,3.2rem);font-weight:800;margin-bottom:20px;letter-spacing:-0.5px;color:#fff;max-width:900px;}
 .hero h1 em{font-style:normal;color:var(--amber);}
-.hero p{font-family:'Source Sans Pro',system-ui,sans-serif;font-size:clamp(15px,2.5vw,18px);color:rgba(255,255,255,.75);max-width:640px;margin:0 auto 24px;line-height:1.7;}
-.hero-trust{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-bottom:32px;font-size:14px;color:rgba(255,255,255,.9);font-weight:600;}
-.hero-trust span{display:inline-flex;align-items:center;gap:6px;background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.25);padding:8px 16px;border-radius:100px;}
-.hero-cta{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;}
-.hero-cta .btn-estimate{padding:14px 28px;font-size:16px;border-radius:6px;}
-.hero-cta .btn-call{display:inline-flex;align-items:center;gap:8px;background:transparent;border:2px solid rgba(255,255,255,.4);color:#fff;padding:12px 24px;border-radius:6px;font-weight:700;font-size:15px;text-decoration:none;transition:all .2s;}
+.hero p{font-family:'Source Sans Pro',system-ui,sans-serif;font-size:clamp(16px,2.5vw,19px);color:rgba(255,255,255,.75);max-width:660px;margin:0 auto 28px;line-height:1.7;}
+.hero-trust{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-bottom:36px;font-size:15px;color:rgba(255,255,255,.95);font-weight:600;}
+.hero-trust span{display:inline-flex;align-items:center;gap:8px;background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.3);padding:10px 20px;border-radius:100px;}
+.hero-cta{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;}
+.hero-cta .btn-estimate{padding:16px 36px;font-size:17px;border-radius:6px;font-weight:700;}
+.hero-cta .btn-call{display:inline-flex;align-items:center;gap:8px;background:transparent;border:2px solid rgba(255,255,255,.4);color:#fff;padding:14px 32px;border-radius:6px;font-weight:700;font-size:16px;text-decoration:none;transition:all .2s;}
 .hero-cta .btn-call:hover{border-color:var(--amber);color:var(--amber);text-decoration:none;}
 
 /* ── TRUST BAR ── */
@@ -69,22 +69,24 @@ h1,h2,h3,h4{font-family:'Playfair Display',Georgia,serif;line-height:1.2;letter-
 /* ── SECTIONS ── */
 .section{padding:80px 20px;}
 .section.alt{background:var(--bg-alt);}
-.section-title{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.5rem,4vw,2rem);font-weight:700;text-align:center;margin-bottom:14px;color:var(--primary);}
-.section-subtitle{text-align:center;color:var(--muted);font-size:16px;max-width:620px;margin:0 auto 40px;line-height:1.7;}
+.section-eyebrow{text-align:center;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--amber);margin-bottom:12px;}
+.section-title{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.75rem,4vw,2.25rem);font-weight:700;text-align:center;margin-bottom:16px;color:var(--primary);}
+.section-title::after{content:'';display:block;width:60px;height:3px;background:var(--amber);margin:16px auto 0;border-radius:2px;}
+.section-subtitle{text-align:center;color:var(--muted);font-size:16px;max-width:620px;margin:0 auto 44px;line-height:1.7;}
 
 /* ── SERVICE CARDS ── */
-.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;max-width:var(--max);margin:0 auto;}
-.card{background:var(--white);border-radius:var(--radius);padding:32px;border-top:3px solid var(--amber);box-shadow:0 2px 12px rgba(0,0,0,.08);transition:transform .2s,box-shadow .2s;}
+.card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;max-width:var(--max);margin:0 auto;}
+.card{background:var(--white);border-radius:var(--radius);padding:36px;border-top:3px solid var(--amber);box-shadow:0 2px 12px rgba(0,0,0,.08);transition:transform .2s,box-shadow .2s;}
 .card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,.12);}
-.card-icon{font-size:32px;margin-bottom:14px;}
-.card h3{font-family:'Playfair Display',Georgia,serif;font-size:18px;font-weight:700;margin-bottom:10px;color:var(--primary);}
-.card p{font-size:15px;color:var(--muted);line-height:1.7;}
+.card-icon{font-size:36px;margin-bottom:16px;}
+.card h3{font-family:'Playfair Display',Georgia,serif;font-size:20px;font-weight:700;margin-bottom:12px;color:var(--primary);}
+.card p{font-size:16px;color:var(--muted);line-height:1.7;}
 
 /* ── REVIEWS ── */
 .review-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;max-width:var(--max);margin:0 auto;}
 .review{background:var(--white);border-radius:var(--radius);padding:28px;box-shadow:0 2px 12px rgba(0,0,0,.08);border-left:3px solid var(--amber);}
 .review-stars{color:var(--amber);font-size:18px;margin-bottom:10px;letter-spacing:2px;}
-.review-text{font-size:15px;color:var(--text);line-height:1.7;margin-bottom:14px;font-style:italic;}
+.review-text{font-size:16px;color:var(--text);line-height:1.7;margin-bottom:14px;font-style:italic;}
 .review-author{font-size:14px;font-weight:700;color:var(--primary);}
 
 /* ── TRUST SECTION ── */
@@ -97,6 +99,7 @@ h1,h2,h3,h4{font-family:'Playfair Display',Georgia,serif;line-height:1.2;letter-
 /* ── CTA BANNER ── */
 .cta-banner{background:var(--primary);background-image:radial-gradient(circle at 30% 50%,rgba(245,158,11,.06) 0%,transparent 50%);color:#fff;padding:64px 20px;text-align:center;}
 .cta-banner h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.5rem,4vw,2rem);font-weight:700;margin-bottom:12px;color:#fff;}
+.cta-banner h2::after{content:'';display:block;width:60px;height:3px;background:var(--amber);margin:16px auto 0;border-radius:2px;}
 .cta-banner p{color:rgba(255,255,255,.7);font-size:17px;margin-bottom:28px;max-width:520px;margin-left:auto;margin-right:auto;}
 .cta-banner .btn-row{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;}
 .btn-red{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:var(--primary);padding:14px 28px;border-radius:6px;font-weight:700;font-size:16px;text-decoration:none;transition:background .15s;}
@@ -104,13 +107,20 @@ h1,h2,h3,h4{font-family:'Playfair Display',Georgia,serif;line-height:1.2;letter-
 .btn-outline{display:inline-flex;align-items:center;gap:8px;background:transparent;border:2px solid rgba(255,255,255,.35);color:#fff;padding:12px 24px;border-radius:6px;font-weight:700;font-size:15px;text-decoration:none;transition:all .2s;}
 .btn-outline:hover{border-color:var(--amber);color:var(--amber);text-decoration:none;}
 
+/* ── WSIC WIDGET ── */
+.widget-section{background:var(--primary);background-image:radial-gradient(circle at 70% 40%,rgba(245,158,11,.06) 0%,transparent 50%);padding:80px 20px;text-align:center;}
+.widget-section h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.75rem,4vw,2.25rem);font-weight:700;color:#fff;margin-bottom:12px;}
+.widget-section h2::after{content:'';display:block;width:60px;height:3px;background:var(--amber);margin:16px auto 0;border-radius:2px;}
+.widget-section p{color:rgba(255,255,255,.7);font-size:17px;max-width:540px;margin:0 auto 36px;line-height:1.7;}
+.widget-container{max-width:700px;margin:0 auto;min-height:200px;}
+
 /* ── FAQ ── */
 .faq-list{max-width:760px;margin:0 auto;}
 .faq-item{border-bottom:1px solid var(--border);padding:20px 0;}
 .faq-q{font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:16px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;color:var(--primary);}
 .faq-q::after{content:'+';font-size:22px;font-weight:400;color:var(--amber);flex-shrink:0;transition:transform .2s;}
 .faq-item.open .faq-q::after{content:'-';}
-.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease;font-size:15px;color:var(--muted);line-height:1.7;}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease;font-size:16px;color:var(--muted);line-height:1.7;}
 .faq-item.open .faq-a{max-height:500px;padding-top:12px;}
 
 /* ── PRICING TABLE ── */
@@ -125,15 +135,10 @@ h1,h2,h3,h4{font-family:'Playfair Display',Georgia,serif;line-height:1.2;letter-
 .price-card li{font-size:14px;padding:8px 0;border-bottom:1px solid var(--bg-alt);display:flex;align-items:center;gap:8px;}
 .price-card li::before{content:'✓';color:var(--amber);font-weight:700;}
 
-/* ── GALLERY ── */
-.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;max-width:var(--max);margin:0 auto;}
-.gallery-item{border-radius:var(--radius);overflow:hidden;background:var(--bg-alt);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:14px;text-align:center;padding:20px;box-shadow:0 2px 8px rgba(0,0,0,.06);}
-.gallery-item img{width:100%;height:100%;object-fit:cover;}
-
 /* ── CONTACT ── */
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;max-width:var(--max);margin:0 auto;}
 .contact-info h3{font-family:'Playfair Display',Georgia,serif;font-size:20px;font-weight:700;margin-bottom:16px;color:var(--primary);}
-.contact-detail{display:flex;align-items:flex-start;gap:12px;margin-bottom:16px;font-size:14px;}
+.contact-detail{display:flex;align-items:flex-start;gap:12px;margin-bottom:16px;font-size:16px;}
 .contact-detail svg{flex-shrink:0;color:var(--amber);margin-top:2px;}
 .contact-detail strong{display:block;margin-bottom:2px;}
 .hours-table{width:100%;font-size:14px;}
@@ -163,7 +168,8 @@ h1,h2,h3,h4{font-family:'Playfair Display',Georgia,serif;line-height:1.2;letter-
 .footer-bottom a{color:rgba(255,255,255,.5);}
 
 /* ── RESPONSIVE ── */
-@media(max-width:900px){
+@media(max-width:960px){
+  .card-grid{grid-template-columns:repeat(2,1fr);}
   .footer-grid{grid-template-columns:1fr 1fr;}
   .contact-grid{grid-template-columns:1fr;}
 }
@@ -175,19 +181,24 @@ h1,h2,h3,h4{font-family:'Playfair Display',Georgia,serif;line-height:1.2;letter-
   .hamburger{display:block;}
   .header-phone .ph-text{display:none;}
   .header-phone .ph-short{display:inline !important;}
-  .hero{padding:48px 16px;}
+  .hero{padding:60px 16px;min-height:auto;}
   .section{padding:48px 16px;}
-  .card-grid{grid-template-columns:1fr;}
+  .widget-section{padding:48px 16px;}
+  .card-grid{grid-template-columns:1fr;gap:20px;}
   .review-grid{grid-template-columns:1fr;}
   .trust-bar-inner{gap:16px;}
   .trust-item{font-size:13px;}
-  .hero-trust{gap:8px;}
-  .hero-trust span{font-size:12px;padding:6px 12px;}
+  .hero-trust{gap:10px;}
+  .hero-trust span{font-size:13px;padding:8px 14px;}
+  .card{padding:28px;}
 }
 @media(max-width:480px){
   .header-inner{height:56px;}
   .logo{font-size:18px;}
   .btn-estimate{padding:10px 16px;font-size:13px;min-height:44px;}
+  .hero{padding:48px 16px;}
+  .hero-cta .btn-estimate{padding:14px 24px;font-size:15px;}
+  .hero-cta .btn-call{padding:12px 20px;font-size:14px;}
   .hero-cta .btn-estimate,.hero-cta .btn-call{min-height:44px;}
   .trust-bar-inner{flex-direction:column;align-items:center;gap:10px;}
   .trust-item{font-size:13px;}
@@ -197,4 +208,5 @@ h1,h2,h3,h4{font-family:'Playfair Display',Georgia,serif;line-height:1.2;letter-
   .area-link{min-height:44px;}
   .contact-form button{min-height:44px;}
   .hero-trust{flex-direction:column;align-items:center;}
+  .card{padding:24px;}
 }
