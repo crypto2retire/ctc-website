@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://cleartheclutterjunkremoval.com/sitemap.xml
+
+# Disallow admin/private paths (none currently, but good practice)
+Disallow: /admin/
+Disallow: /private/
