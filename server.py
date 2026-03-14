@@ -4,6 +4,14 @@ import os
 
 PORT = int(os.environ.get("PORT", 8080))
 
+SECURITY_HEADERS = {
+    "X-Frame-Options": "DENY",
+    "X-Content-Type-Options": "nosniff",
+    "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+    "Referrer-Policy": "strict-origin-when-cross-origin",
+    "X-XSS-Protection": "1; mode=block",
+}
+
 class Handler(http.server.SimpleHTTPRequestHandler):
     extensions_map = {
         ".html": "text/html",
@@ -17,8 +25,14 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         ".svg": "image/svg+xml",
         ".ico": "image/x-icon",
         ".webp": "image/webp",
+        ".xml": "application/xml",
         "": "application/octet-stream",
     }
+
+    def end_headers(self):
+        for header, value in SECURITY_HEADERS.items():
+            self.send_header(header, value)
+        super().end_headers()
 
     def do_GET(self):
         # Serve clean URLs: /services -> /services.html
