@@ -114,6 +114,12 @@ p { margin-bottom: 1em; }
   height: 36px;
 }
 
+.logo img {
+  max-height: 35px;
+  width: auto;
+  display: block;
+}
+
 .logo-text {
   line-height: 1.15;
 }
@@ -730,6 +736,10 @@ p { margin-bottom: 1em; }
 
 .footer-brand .logo {
   margin-bottom: 16px;
+}
+
+.footer-brand .logo img {
+  max-height: 60px;
 }
 
 .footer-brand p {
